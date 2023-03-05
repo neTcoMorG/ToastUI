@@ -22,15 +22,13 @@ public class Post {
     }
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY) private Long id;
+
     @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, mappedBy = "post")
     private List<Comment> commentList = new ArrayList<>();
     private String title;
     private String content;
-
     private String password;
-
     private String name;
-
     @CreatedDate private LocalDateTime created;
 
     public void addComment (Comment comment) {
