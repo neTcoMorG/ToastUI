@@ -5,6 +5,7 @@ import com.board.test.domain.entity.Post;
 import com.board.test.domain.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -16,6 +17,10 @@ public class PostService {
 
     public List<Post> getPosts () {
         return postRepository.findAll();
+    }
+
+    public Post getPost (String uuid) {
+        return postRepository.findByUuid(uuid).orElseThrow();
     }
 
     public Long addPost (CreatePostDto dto) {

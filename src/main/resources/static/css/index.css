@@ -5,10 +5,22 @@ html, body {
 }
 
 .container {
-    display: flex;
 
-    width: 100%;
-    height: 100%;
+    display: flex;
+    width: 840px;
+    height: 100vh;
+    margin: auto;
     justify-content: center;
     align-items: center;
+}
+
+.editor-wrapper {
+    width: 100%;
+    height: 500px;
+}
+
+#editor-sendBtn {
+    position: relative;
+    right: 0;
+    background-color: olive;
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
@@ -8,8 +8,10 @@
 </head>
 <body>
     <div class="container">
-        <h2>Thymeleaf Template Sample</h2>
-        <div id="editor"></div>
+        <div class="editor-wrapper">
+            <div id="editor"></div>
+            <button id="editor-sendBtn">전송</button>
+        </div>
     </div>
 </body>
 <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
@@ -17,7 +19,8 @@
     const Editor = toastui.Editor;
     const editor = new Editor({
         el: document.querySelector('#editor'),
-        height: '300px',
+        initialEditType: 'wysiwyg',
+        hideModeSwitch: true,
     });
 </script>
 </html>
